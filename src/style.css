@@ -1,0 +1,323 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: 'Darumadrop One', cursive;
+  font-size: 62.5%;
+}
+
+body {
+  background-image: linear-gradient(
+      to right,
+      rgba(256, 256, 256, 0.2),
+      rgba(256, 256, 256, 0.2),
+      rgba(256, 256, 256, 0.2)
+    ),
+    url(../img/forest_during_nighttime_hd_dark_aesthetic.jpg);
+  background-size: cover;
+  display: grid;
+  grid-template-columns: 2fr auto 2fr;
+  gap: 2rem;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.grid {
+  width: 40rem;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.cell {
+  width: 4rem;
+  height: 4rem;
+  border: 0.3rem solid rgba(255, 228, 196, 1.42);
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 1.35);
+  cursor: pointer;
+  font-size: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: darkslategrey;
+}
+
+.grid--medium {
+  width: 60rem;
+}
+
+.grid--large {
+  width: 75rem;
+  margin: 0;
+}
+
+.grid--large .cell {
+  width: 3rem;
+  height: 3rem;
+}
+
+.header {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.h1 {
+  font-size: 4rem;
+  text-align: center;
+}
+
+.menu {
+  font-size: 2rem;
+  display: flex;
+  flex-flow: column;
+}
+
+.menu__btn {
+  cursor: pointer;
+}
+
+.menu__btn--active {
+  color: rgba(255, 228, 196);
+}
+
+.grid div:active {
+  box-shadow: none;
+}
+
+/* .mine {
+  background-color: crimson;
+} */
+
+.mine.fail {
+  background-color: crimson;
+}
+
+.valid {
+  background-color: darkslategrey;
+}
+
+.checked {
+  background-color: azure;
+  color: darkslategray;
+}
+
+.stats {
+  background: linear-gradient(
+    to right,
+    rgba(256, 256, 256, 0.2),
+    rgba(256, 256, 256, 0.2)
+  );
+  font-size: 2rem;
+  box-shadow: 0 0 2rem rgba(0, 0, 60, 0.35);
+  padding: 0.5rem 1rem;
+}
+
+.stats__rules {
+  font-size: 2.4rem;
+  margin-bottom: 1.2rem;
+}
+
+.stats__input {
+  width: 100%;
+  background: transparent;
+  border: 0.2rem solid rgba(255, 228, 196, 0.72);
+  margin-bottom: 0.5rem;
+}
+
+.stats__input:focus {
+  outline: 0.2rem solid rgb(255, 228, 196);
+}
+
+.stats__input:focus::placeholder {
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.stats__input::placeholder {
+  color: inherit;
+  font-family: 'Darumadrop One', cursive;
+}
+
+.stats__btn {
+  font-family: inherit;
+  margin-right: 2rem;
+  width: 50%;
+  color: inherit;
+  border: 0.2rem solid rgba(255, 228, 196, 0.72);
+  background: transparent;
+  cursor: pointer;
+}
+
+.stats__sound--on,
+.stats__sound--off {
+  cursor: pointer;
+}
+
+.stats__sound--on.active,
+.stats__sound--off.active {
+  cursor: pointer;
+  color: rgba(255, 228, 196, 0.9);
+}
+
+.stats__sound--on {
+  margin-right: 2rem;
+}
+
+.counter span {
+  color: rgba(255, 228, 196, 0.9);
+}
+
+.gameover {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+    to right,
+    rgba(256, 256, 256, 0.2),
+    rgba(256, 256, 256, 0.2)
+  );
+  box-shadow: 0 0 2rem rgba(0, 0, 60, 0.35);
+  border: 1rem solid rgba(255, 228, 196, 1.42);
+  color: rgba(255, 228, 196, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5rem;
+  font-size: 3rem;
+
+  position: fixed;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.gameover__title {
+  padding: 1rem 2rem;
+  background: rgba(47, 79, 79, 0.9);
+}
+
+.gameover__btn {
+  background: rgba(47, 79, 79, 0.9);
+  border: 0.1rem solid rgba(255, 228, 196, 0.9);
+  color: inherit;
+  font-size: 2rem;
+  font-family: inherit;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+}
+
+.start-message {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  width: 50rem;
+  height: 5rem;
+  font-size: 2rem;
+  text-align: center;
+  background: linear-gradient(
+    to right,
+    rgba(256, 256, 256, 0.4),
+    rgba(256, 256, 256, 0.4)
+  );
+  box-shadow: 0 0 2rem rgba(0, 0, 60, 0.35);
+  border: 1rem solid rgba(255, 228, 196, 1.42);
+  cursor: pointer;
+}
+
+.blur {
+  background-color: rgba(256, 256, 256, 0.1);
+  position: fixed;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+@media screen and (max-width: 69.5em) {
+  .grid {
+    margin: 3rem auto;
+    width: 40rem;
+  }
+  .cell {
+    position: relative;
+    width: 4rem;
+    height: 4rem;
+    font-size: 2.4rem;
+  }
+
+  .grid--medium {
+    width: 60rem;
+  }
+  .grid--medium .cell {
+    font-size: 1.8rem;
+  }
+
+  .grid--large {
+    width: 60rem;
+  }
+
+  .grid--large .cell {
+    width: 2.4rem;
+    height: 2.4rem;
+    font-size: 1.8rem;
+  }
+}
+@media screen and (max-width: 62.5em) {
+  html {
+    font-size: 50%;
+  }
+
+  body {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .gameover {
+    font-size: 3rem;
+  }
+
+  .gameover__title {
+    font-size: 3rem;
+  }
+
+  .stats__rules {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 37.5em) {
+  .grid {
+    margin: 0;
+  }
+
+  .grid--medium {
+    width: 37rem;
+  }
+
+  .grid--medium .cell {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  .grid--large {
+    width: 50rem;
+  }
+
+  .grid--large .cell {
+    width: 2rem;
+    height: 2rem;
+  }
+}
