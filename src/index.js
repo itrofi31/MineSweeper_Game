@@ -78,8 +78,8 @@ class Minesweeper {
 
     this.btnSize10 = this.createEl('div', 'menu__btn', 'Easy: 10x10');
     this.btnSize10.classList.add('menu__btn--active');
-    this.btnSize15 = this.createEl('div', 'menu__btn', 'Easy: 15x15');
-    this.btnSize25 = this.createEl('div', 'menu__btn', 'Easy: 25x25');
+    this.btnSize15 = this.createEl('div', 'menu__btn', 'Medium: 15x15');
+    this.btnSize25 = this.createEl('div', 'menu__btn', 'Hard: 25x25');
 
     this.sizeMenu.append(this.btnSize10, this.btnSize15, this.btnSize25);
 
